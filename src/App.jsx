@@ -9,7 +9,7 @@ export const App = () => {
   const [displayTime, setDisplayTime] = useState(25 * 60)
 
   const [timerRunning, setTimerRunning] = useState(false)
-  const [onBreak, setOnBreak] = useState(false)
+  const [onBreak, setOnBreak] = useState(true)
 
   return (
     <>
@@ -18,15 +18,24 @@ export const App = () => {
       </div>
 
       <div className="controllers flex-R">
-        <Controllers/>
-        <Controllers/>
+        <Controllers
+          name = 'Break'
+          type = 'break'
+          length = {breakTime}
+        />
+
+        <Controllers
+          name = 'Work'
+          type = 'work'
+          length = {workTime}
+        />
       </div>
 
 
       {onBreak ? 
         <Timer
           name = 'Break'
-          time = {displayTime}
+          time = {breakTime}
         />
       
       : <Timer

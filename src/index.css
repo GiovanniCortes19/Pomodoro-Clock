@@ -64,6 +64,11 @@ body {
 .controlBlock>h2{
   text-transform: uppercase;
 }
+.clickables > button {
+  padding: 0 10px;
+  font-size: medium;
+  height: 50%;
+}
 
 .controlBtn {
   cursor: pointer;
@@ -74,6 +79,7 @@ body {
 }
 
 button {
+  cursor: pointer;
   background-color: white;
   border: none;
   border-radius: 7px;
