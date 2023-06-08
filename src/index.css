@@ -73,12 +73,22 @@ body {
   color: rgba(255, 255, 255, 0.307);
 }
 
+button {
+  background-color: white;
+  border: none;
+  border-radius: 7px;
+  color: black;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+}
+button:hover{
+  background-color: rgba(255, 255, 255, 0.526);
+}
+
 .display {
-  /* border: 1px solid red; */
-  /* border-radius: 50px; */
   margin-top: 10px;
   padding: 10px;
-
 }
 
 .clock {
