@@ -2,7 +2,7 @@
 
 const Timer = () => {
   return (
-    <div>
+    <div className="display flex-C">
         <h2>Timer Clock</h2>
     </div>
   )
