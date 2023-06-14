@@ -3,8 +3,8 @@
   line-height: 1.5;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #202020;
+  color: black;
+  background-color: whitesmoke;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,7 +24,8 @@ body {
 }
 
 .title {
-  border: 5px double rgb(179, 50, 11);
+  border: 5px double black;
+  /* border: 5px double rgb(179, 50, 11); */
   border-radius: 50px;
   margin-top: 10px;
   text-align: center;
@@ -55,7 +56,7 @@ body {
 }
 
 .controlBlock {
-  border: 3px solid green;
+  border: 3px solid black;
   border-radius: 30px;
   padding: 10px 20px;
   line-height: 1.0;
