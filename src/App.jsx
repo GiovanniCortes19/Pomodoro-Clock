@@ -9,9 +9,16 @@ export const App = () => {
   const [displayTime, setDisplayTime] = useState(25 * 60)
 
   const [timerRunning, setTimerRunning] = useState(false)
-  const [onBreak, setOnBreak] = useState(true)
+  const [onBreak, setOnBreak] = useState(false)
 
   // FUNCTIONS
+  function increaseTime(){
+    if (this.type === 'work' && workTime < 60*60){
+      setWorkTime(prev => prev + 60)
+    } else if (this.type === 'break' && breakTime < 60*60){
+      setBreakTime(prev => prev+60)
+    }
+  }
 
   // TIMER EFFECT
 
@@ -26,12 +33,14 @@ export const App = () => {
           name = 'Break'
           type = 'break'
           length = {breakTime}
+          increaseTime = {increaseTime}
         />
 
         <Controllers
           name = 'Work'
           type = 'work'
           length = {workTime}
+          increaseTime = {increaseTime}
         />
       </div>
 
