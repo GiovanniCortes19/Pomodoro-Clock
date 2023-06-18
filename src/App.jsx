@@ -28,6 +28,15 @@ export const App = () => {
     }
   }
 
+    // reset
+  function resetTimer(){
+    setWorkTime(prev => 25*60)
+    setBreakTime(prev => 5*60)
+    setDisplayTime(workTime)
+    setOnBreak(false)
+    setTimerRunning(false)
+  }
+
   // TIMER EFFECT
 
   return (
@@ -59,11 +68,13 @@ export const App = () => {
         <Timer
           name = 'Break'
           time = {breakTime}
+          resetTimer = {resetTimer}
         />
       
       : <Timer
         name = 'Work'
-        time = {displayTime}
+        time = {workTime}
+        resetTimer = {resetTimer}
       />}
 
     </>

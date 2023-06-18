@@ -10,7 +10,7 @@ const Timer = (props) => {
 
         <div className="clockButtons flex-R">
             <button className="">Play / Stop</button>
-            <button className="">Reset</button>
+            <button className=""  onClick={()=>props.resetTimer()}>Reset</button>
         </div>
     </div>
   )
