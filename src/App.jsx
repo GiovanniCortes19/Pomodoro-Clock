@@ -18,7 +18,7 @@ export const App = () => {
   return (
     <>
       <div className="title">
-        <h1>Pomodoro Clock</h1>
+        <p>Pomodoro Clock</p>
       </div>
 
       <div className="controllers flex-R">
