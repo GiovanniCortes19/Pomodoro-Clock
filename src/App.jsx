@@ -16,7 +16,15 @@ export const App = () => {
     if (this.type === 'work' && workTime < 60*60){
       setWorkTime(prev => prev + 60)
     } else if (this.type === 'break' && breakTime < 60*60){
-      setBreakTime(prev => prev+60)
+      setBreakTime(prev => prev + 60)
+    }
+  }
+
+  function decreaseTime(){
+    if (this.type === 'work' && workTime > 0){
+      setWorkTime(prev => prev - 60)
+    } else if (this.type === 'break' && breakTime > 0){
+      setBreakTime(prev => prev - 60)
     }
   }
 
@@ -34,6 +42,7 @@ export const App = () => {
           type = 'break'
           length = {breakTime}
           increaseTime = {increaseTime}
+          decreaseTime = {decreaseTime}
         />
 
         <Controllers
@@ -41,6 +50,7 @@ export const App = () => {
           type = 'work'
           length = {workTime}
           increaseTime = {increaseTime}
+          decreaseTime = {decreaseTime}
         />
       </div>
 
