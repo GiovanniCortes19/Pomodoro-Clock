@@ -11,6 +11,10 @@ export const App = () => {
   const [timerRunning, setTimerRunning] = useState(false)
   const [onBreak, setOnBreak] = useState(true)
 
+  // FUNCTIONS
+
+  // TIMER EFFECT
+
   return (
     <>
       <div className="title">
