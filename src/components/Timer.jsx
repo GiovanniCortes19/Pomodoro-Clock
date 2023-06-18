@@ -5,7 +5,7 @@ const Timer = (props) => {
     <div className="display flex-C">
         <div className="clock controlBlock">
             <h2>{props.name}</h2>
-            <div>{props.time}</div>
+            <div className="time">{props.time}</div>
         </div>
 
         <div className="clockButtons flex-R">
