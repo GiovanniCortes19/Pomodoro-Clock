@@ -9,7 +9,7 @@ export const App = () => {
   const [displayTime, setDisplayTime] = useState(25 * 60)
 
   const [timerRunning, setTimerRunning] = useState(false)
-  const [onBreak, setOnBreak] = useState(false)
+  const [onBreak, setOnBreak] = useState(true)
 
   // FUNCTIONS
   function increaseTime(){
@@ -36,6 +36,16 @@ export const App = () => {
     setOnBreak(false)
     setTimerRunning(false)
   }
+
+  // CHANGING BETWEEN TIMERS
+  useEffect(() => { 
+    if (onBreak){
+      setDisplayTime(breakTime)
+    } else {
+      setDisplayTime(workTime)
+    }
+
+   }, [onBreak, workTime, breakTime])
 
   // TIMER EFFECT
 
@@ -67,13 +77,13 @@ export const App = () => {
       {onBreak ? 
         <Timer
           name = 'Break'
-          time = {breakTime}
+          time = {displayTime}
           resetTimer = {resetTimer}
         />
       
       : <Timer
         name = 'Work'
-        time = {workTime}
+        time = {displayTime}
         resetTimer = {resetTimer}
       />}
 
