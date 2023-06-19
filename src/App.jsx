@@ -37,10 +37,6 @@ export const App = () => {
     setTimerRunning(false)
   }
   
-  // format time
-  // function formatTime(){
-  //   let minutes = workTime / 60;
-  // }
 
   // CHANGING BETWEEN TIMERS
   useEffect(() => { 
