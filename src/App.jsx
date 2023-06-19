@@ -37,6 +37,9 @@ export const App = () => {
     setTimerRunning(false)
   }
   
+  function runStop(){
+    setTimerRunning(prev => !prev)
+  }
 
   // CHANGING BETWEEN TIMERS
   useEffect(() => { 
@@ -45,10 +48,29 @@ export const App = () => {
     } else {
       setDisplayTime(workTime)
     }
-
    }, [onBreak, workTime, breakTime])
 
   // TIMER EFFECT
+  let timer;
+  
+
+  useEffect(() => { 
+    if (timerRunning && displayTime > 0){
+      timer = setInterval(() => {
+        setDisplayTime(prev => prev - 1)
+      }, 1000);
+      return () => clearInterval(timer)
+    } else if (timerRunning && displayTime === 0){
+      if (onBreak){
+        setOnBreak(prev => !prev)
+        setDisplayTime(workTime)
+      } else {
+        setOnBreak(prev => !prev)
+        setDisplayTime(breakTime)
+      }
+    }
+
+   }, [displayTime, onBreak, timerRunning])
 
   return (
     <>
@@ -80,12 +102,14 @@ export const App = () => {
           name = 'Break'
           time = {displayTime}
           resetTimer = {resetTimer}
+          runOrStop = {runStop}
         />
       
       : <Timer
         name = 'Work'
         time = {displayTime}
         resetTimer = {resetTimer}
+        runOrStop = {runStop}
       />}
 
     </>
