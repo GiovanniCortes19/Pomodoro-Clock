@@ -12,6 +12,7 @@ const Timer = (props) => {
             <button className="playReset-btn" onClick={()=>props.runOrStop()}>Play / Stop</button>
             <button className="playReset-btn" onClick={()=>props.resetTimer()}>Reset</button>
         </div>
+        <audio id='beep' src="https://raw.githubusercontent.com/freeCodeCamp/cdn/master/build/testable-projects-fcc/audio/BeepSound.wav"></audio>
     </div>
   )
 }

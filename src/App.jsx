@@ -35,6 +35,8 @@ export const App = () => {
     setDisplayTime(workTime)
     setOnBreak(false)
     setTimerRunning(false)
+    beep.pause()
+    beep.currentTime = 0
   }
   
   function runStop(){
@@ -52,7 +54,8 @@ export const App = () => {
 
   // TIMER EFFECT
   let timer;
-  
+  const beep = document.getElementById('beep')
+
 
   useEffect(() => { 
     if (timerRunning && displayTime > 0){
@@ -61,6 +64,7 @@ export const App = () => {
       }, 1000);
       return () => clearInterval(timer)
     } else if (timerRunning && displayTime === 0){
+      beep.play()
       if (onBreak){
         setOnBreak(prev => !prev)
         setDisplayTime(workTime)
