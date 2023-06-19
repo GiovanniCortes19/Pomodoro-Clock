@@ -7,7 +7,7 @@ const Controllers = (props) => {
 
         <div className="clickables flex-R">
             <button id={`${props.type}-increment`} onClick={() => props.increaseTime()}>+</button>
-            <h3 id={`${props.type}-length`}>{props.length}</h3>
+            <p id={`${props.type}-length`}>{props.length}</p>
             <button id={`${props.type}-decrement`} onClick={() => props.decreaseTime()}>-</button>
         </div>
     </div>
