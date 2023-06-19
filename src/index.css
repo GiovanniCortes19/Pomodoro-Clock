@@ -22,6 +22,7 @@ body {
   overflow: hidden;
 }
 
+/* TITLE */
 .title {
   border-radius: 20px;
   color: white;
@@ -30,7 +31,7 @@ body {
   width: 40vw;
   height: 2em;
   background: #1E1E1E;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: -4px 4px 9px 0px rgba(0, 0, 0, 0.471);
   text-transform: uppercase;
   font-size: x-large;
   font-weight: bold;
@@ -42,31 +43,30 @@ body {
   margin: auto;
 }
 
+/* FLEX CONTAINERS */
 .flex-R {
   display: flex;
   gap: 10px;
-  /* align-items: center; */
-
 }
 
 .flex-C {
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
 
+/* CONTROLLERS COMPONENT */
 .controllers {
   width: 40vw;
   margin-top: 30px;
   padding: 10px;
   justify-content: space-between;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.292));
 }
 
 .lengthController{
   width: 40%;
   height: 10em;
+  box-shadow: -4px 4px 9px 0px rgba(0, 0, 0, 0.471);
 }
 
 .controlBlock {
@@ -74,7 +74,6 @@ body {
   border-radius: 30px;
   padding: 10px 20px;
   line-height: 1.0;
-
 }
 .controlBlock>h2{
   text-transform: uppercase;
@@ -92,40 +91,51 @@ body {
   background-color: rgba(255, 255, 255, 0);
   color: #000000;
   border: 1px solid #000000;
-  box-shadow: 0px 2px 5px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: -3px 2px 5px 0px rgba(0, 0, 0, 0.295);
 }
 
 
-
-.controlBtn {
-  cursor: pointer;
-  user-select: none;
-}
-.controlBtn:hover{
-  color: rgba(255, 255, 255, 0.307);
-}
-
+/* BUTTONS PLAY - RESET */
 button {
   cursor: pointer;
   background-color: black;
   border: none;
-  border-radius: 7px;
   color: white;
   font-weight: bold;
   margin-top: 10px;
-  padding: 5px;
 }
 button:hover{
   background-color: rgba(168, 168, 168, 0.526);
 }
 
+.playReset-btn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-size: small;
+  font-family: 'Montserrat';
+  margin: 20px 10px;
+  box-shadow: -4px 4px 9px 0px rgba(0, 0, 0, 0.471);
+}
+.playReset-btn:hover{
+  color: black;
+  background-color: rgba(72, 72, 72, 0.078);
+  border-radius: 70px;
+  border: 2px solid black;
+  padding: -3px -3px;
+  text-transform: uppercase;
+}
 
+.clockButtons {
+  margin: auto;
+  justify-content: center;
+  width: 50%;
+}
+
+/* DISPLAY COMPONENT */
 .display {
   margin-top: 10px;
   padding: 10px;
   width: 40vw;
-
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .clock {
@@ -135,6 +145,7 @@ button:hover{
   padding-bottom: 15px;
   width: 38vw;
   font-size: x-large;
+  box-shadow: -4px 4px 9px 0px rgba(0, 0, 0, 0.471);
 }
 
 .clock > h2 {
