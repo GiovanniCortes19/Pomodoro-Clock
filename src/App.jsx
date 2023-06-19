@@ -21,9 +21,9 @@ export const App = () => {
   }
 
   function decreaseTime(){
-    if (this.type === 'work' && workTime > 0){
+    if (this.type === 'work' && workTime > 60){
       setWorkTime(prev => prev - 60)
-    } else if (this.type === 'break' && breakTime > 0){
+    } else if (this.type === 'break' && breakTime > 60){
       setBreakTime(prev => prev - 60)
     }
   }
@@ -36,6 +36,11 @@ export const App = () => {
     setOnBreak(false)
     setTimerRunning(false)
   }
+  
+  // format time
+  // function formatTime(){
+  //   let minutes = workTime / 60;
+  // }
 
   // CHANGING BETWEEN TIMERS
   useEffect(() => { 
@@ -59,7 +64,7 @@ export const App = () => {
         <Controllers
           name = 'Break'
           type = 'break'
-          length = {breakTime}
+          length = {breakTime/60}
           increaseTime = {increaseTime}
           decreaseTime = {decreaseTime}
         />
@@ -67,7 +72,7 @@ export const App = () => {
         <Controllers
           name = 'Work'
           type = 'work'
-          length = {workTime}
+          length = {workTime/60}
           increaseTime = {increaseTime}
           decreaseTime = {decreaseTime}
         />
